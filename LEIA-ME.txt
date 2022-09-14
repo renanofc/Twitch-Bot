@@ -98,10 +98,7 @@ Para continuarmos, abaixo você encontra algumas coisas sobre como instalar o qu
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
->>> INFORMAÇÕES ADICIONAIS AO CLIENTE <<<
-
-    Olá, Renan M.
-    Para que você comece a usar o seu bot por completo, além dos passos acimas, também terei passos adicionais para você fazê-los:
+    Para que você comece a usar o o bot por completo, além dos passos acimas, também terei passos adicionais para você fazê-los:
 
     Caso tenha já fechado o bloco de notas, abra-o novamente (comando: notepad.exe .env)
     Você pode notar que existem outras opções, como:
@@ -131,5 +128,3 @@ Para continuarmos, abaixo você encontra algumas coisas sobre como instalar o qu
     Após feito todos os passos adicionais, aproveite seu Bot!
     Todos os comandos, MENOS o de ajuda (!help) são feitos pela nova integração do Discord, os comandos de barra.
     O comando !help te mostrará todos os comandos disponíveis para o bot.
-    
-    Caso algo dê errado, aqui está um convite secreto para você: тоска#8800 (Copie e Cole, você sabe como funciona, né?)
