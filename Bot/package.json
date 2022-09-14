@@ -1,0 +1,28 @@
+{
+    "name": "twitch-clip-bot",
+    "version": "1.0.0",
+    "description": "Bot do Discord que baixa clipes da Twitch e os salva em um diretório (Especifícado ou não), + Moderação e outras funções.\nFeito por: Renan.#4174",
+    "main": "src/bot.js",
+    "scripts": {
+        "nodemon": "nodemon src/bot.js"
+    },
+    "keywords": [],
+    "author": "Renan Moreira",
+    "maintainers": [
+        {
+            "name": "Renan Moreira",
+            "email": "renanmoreira.po@gmail.com"
+        }
+    ],
+    "license": "ISC",
+    "dependencies": {
+        "async": "^3.2.4",
+        "cheerio": "^1.0.0-rc.10",
+        "discord.js": "^13.8.0",
+        "dotenv": "^16.0.1",
+        "mongoose": "^6.3.6",
+        "node-fetch": "^2.6.7",
+        "nodemon": "^2.0.16",
+        "request": "^2.88.2"
+    }
+}

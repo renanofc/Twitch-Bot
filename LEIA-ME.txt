@@ -1,0 +1,135 @@
+Olá!
+Eu, Renan, agradeço muitissímo!
+
+Para continuarmos, abaixo você encontra algumas coisas sobre como instalar o que é necessário para o bot:
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+1º Passo: 
+    Instale o NodeJS que pode ser encontrado no diretório principal do bot, dentro da pasta "Requisitos/NodeJS"
+    Não se esqueça de instalar o correspondente ao seu computador, pois existem dois arquivos diferentes, o x86.msi e o x64.msi
+    1 - Não sabe qual é o seu tipo de sistema? Não tem problema, você pode encontrar ele digitando na barra de pesquisa do Windows: "control.exe system"
+        Então após a configuração abrir, você pode checar o tipo do sistema, que está descrito abaixo do "ID do Produto", em "Tipo de sistema"
+        Caso o seu seja "Sistema operacional de 64bits", abra o x64.msi, caso contrário, abra o x86.msi (>>> Com permissão de Administrador!!! <<<)
+    
+    Ao abrir o arquivo com permissão de Administrador e prosseguir com a instalação, tenha certeza de aceitar a instalação de módulos terceiros, na página "Tools for Native Modules"
+    Após instalado, reinicie seu computador (Opcional, mas recomendado).
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+2º Passo:
+    Após ter instalado, tenha certeza de habilitar a execução de Scripts no Windows (É algo arriscado, tenha noção disso, habilitar a execução de scripts terceiros é algo no qual as pessoas normalmente não fariam sem um motivo justo, +
+	nesse caso,você irá precisar para rodar o bot, ou o mesmo não irá funcionar.)
+
+    Existem dois modos de se fazer isso, o modo seguro, e o modo "sem restrições"
+    1 - Modo Seguro:
+        Abra o >> Powershell << com permissões de administrador, e então digite:
+            Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
+        RemoteSigned significa o seguinte, para o Windows:
+            • A política de execução padrão para Windows servidores.
+            • Os scripts podem ser executados.
+            • Requer uma assinatura digital de um editor confiável em scripts e arquivos de configuração baixados da Internet, o que inclui programas de email e mensagens instantâneas.
+            • Não requer assinaturas digitais em scripts que são gravados no computador local e não baixados da Internet.
+            • Executa scripts baixados da Internet e não assinados, se os scripts são desbloqueados, como usando o Unblock-File cmdlet .
+            • Corre o risco de executar scripts não assinados de fontes diferentes da Internet e scripts assinados que podem ser mal-intencionados.
+            (Os itens acimas foram retirados do próprio site do Windows, em: https://docs.microsoft.com/pt-br/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-7.2)
+        
+        Pode ser que ao utilizar este método, você tenha de repetir o passo algumas vezes após reiniciar o computador!
+        Caso não queira, dê uma olhada no cmdlet "Unblock-File": https://docs.microsoft.com/pt-br/previous-versions/powershell/module/microsoft.powershell.utility/unblock-file?view=powershell-7.1
+
+    2 - Modo "Sem Restrições"
+        Abra o >> Powershell << com permissões de administrador, e então digite:
+            Set-ExecutionPolicy -ExecutionPolicy Unrestricted
+        "Unrestricted" significa o seguinte, para o Windows:
+            • A política de execução padrão para computadores não Windows e não pode ser alterada.
+            • Scripts não assinados podem ser executados. Há um risco de execução de scripts mal-intencionados.
+            • Avisa o usuário antes de executar scripts e arquivos de configuração que não são da zona da intranet local.
+                OBS: Em sistemas que não distinguem caminhos UNC dos caminhos da Internet, os scripts identificados por um caminho UNC podem não ter permissão para serem executados com a política de execução RemoteSigned.
+            (Os itens acimas foram retirados do próprio site do Windows, em: https://docs.microsoft.com/pt-br/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-7.2)
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+3º Passo:
+    Após ter habilitado a execução de scripts, agora você poderá abrir seu powershell ou cmd (Um dos dois, não utilize outro pois podem ocorrer erros por conta de formas que os terminais funcionam!)
+        Uma recomendação, utilize o aplicativo chamado "Windows Terminal", você pode encontrar o mesmo na Microsoft Store, e o mesmo é gratuito.
+    Vá até o diretório em que o bot está utilizando o comando "cd <local-do-arquivo>", Ex: "cd C:\Users\VOCÊ\Documents\BOT"
+
+    Após feito, digite no terminal: "notepad.exe .env" (Deste exato modo!)
+    Você irá encontrar a estrutura das variáveis necessárias (As opcionais estarão específicadas.)
+
+    Na parte onde está escrito:
+        "TOKEN=" (Sem as aspas, claro), é onde você irá colocar o Token do seu Bot do Discord
+        Como conseguir um? Simples!:
+            Entre neste link: https://discord.com/developers/applications
+            Após, clique em "New Application"
+            Dê um nome ao Bot, qualquer coisa que desejar (Desde que não seja contra as regras do Discord, óbvio!)
+            Clique na aba "Bot", localizada no lado esquerdo da página, e então onde está escrito "Add Bot"
+            Após, clique em "Reset Token", então copie e cole o token que foi gerado após o "TOKEN=" (Não remova o "=", >>> é sério! <<<)
+
+            Na mesma página ainda, habilite todas opções disponíveis após o "Privileged Gateway Intents", é bom habilitar todas por precaução.
+        
+        Após isso, salve o arquivo com as mudanças feitas, mas não o feche!.
+    Agora, na parte onde está escrito:
+        "BOT_OWNER=", é onde você vai colocar o seu ID do Discord, nada mais, nada menos, ok?
+        Isto pode ser opcional para alguns clientes, portanto se esta opção não estiver no arquivo .env que você abriu, não se preocupe, okay?
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+4º Passo:
+
+    >>> ANTES DE LER ESTE PASSO: trate de checar também a parte de: "Informações Adicionais ao Cliente", logo abaixo! <<<
+    Volte ao terminal que estava utilizando e digite: "npm run nodemon"
+    Após isso, seu bot deve começar a funcionar sem problema nenhum.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+5º Passo:
+    Adicione seu bot em um servidor de sua posse (Ou que você tenha acesso para adicionar bots.)
+    Abra novamente o site de desenvolvedor do Discord (https://discord.com/developers/applications)
+    Clique no seu bot e entre na aba "OAuth2" e clique em "URL Generator", após isto, cheque as seguintes opções:
+        ✔ bot
+        ✔ applications.commands
+    Após isto, coloque as permissões do bot, você pode decidir entre escolher uma por uma ou simplesmente habilitar a opção "Administrator"
+    Abaixo do mesmo, terá a URL que você irá utilizar para fazer com que seu bot entre em um servidor.
+
+    Sem este passo, você não irá conseguir interagir com seu bot.
+    As opções devem estar marcadas assim como está no seguinte print (Tirando pelas permissões, porém é mais fácil dar a adminsitração para o mesmo):
+    https://prnt.sc/mw-S7xRUBL-s
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+>>> INFORMAÇÕES ADICIONAIS AO CLIENTE <<<
+
+    Olá, Renan M.
+    Para que você comece a usar o seu bot por completo, além dos passos acimas, também terei passos adicionais para você fazê-los:
+
+    Caso tenha já fechado o bloco de notas, abra-o novamente (comando: notepad.exe .env)
+    Você pode notar que existem outras opções, como:
+        "TWITCH_ID="
+        "OAUTH="
+        "CLIPS_PATH="
+
+    No primeiro e segundo, você irá precisar entrar neste link: https://dev.twitch.tv/console
+    Autorize o acesso à sua conta da twitch (Não se preocupe, este link é um link do próprio site da twitch)
+    Clique em "Registrar seu Aplicativo"
+    Pode colocar o nome que desejar, qualquer um serve
+    Na segunda parte, coloque: http://localhost
+    E selecione qualquer categoria (Eu, pessoalmente escolheria a categoria "Chat Bot")
+    Após ter criado, clique onde está escrito "Manage", ou "Configurar"
+
+    O "Client ID" você irá copiar e colar após o "TWITCH_ID="
+
+    Clique em "Novo Segredo", ou "New Secret" e gere um novo Segredo
+    Após, copie o mesmo e coloque após o "OAUTH="
+
+    Depois de fazer isto, o bot está pronto para ser utilizado, sem problemas nenhum!
+
+    Caso deseje que o bot salve os clipes em algum outro lugar que não seja a pasta "clips" no diretório do bot:
+    Na parte "CLIPS_PATH=", copie e cole uma URL >>VÁLIDA<<
+    Por exemplo: " cd C:\Users\VOCÊ\Desktop\Clipes\ " <<< NÃO ESQUEÇA DA BARRA INVERTIDA NO FINAL!!!
+
+    Após feito todos os passos adicionais, aproveite seu Bot!
+    Todos os comandos, MENOS o de ajuda (!help) são feitos pela nova integração do Discord, os comandos de barra.
+    O comando !help te mostrará todos os comandos disponíveis para o bot.
+    
+    Caso algo dê errado, aqui está um convite secreto para você: тоска#8800 (Copie e Cole, você sabe como funciona, né?)
